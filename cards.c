@@ -30,8 +30,6 @@ int main() {
         while ((c = getchar()) != '\n' && c != EOF);
     }
 
-
-
     printf("\nInforme o estado A (Obs: uma Letra de A a H):");
     scanf(" %c", &estadoA);
     limparBuffer();
@@ -51,7 +49,7 @@ int main() {
     scanf("%f", &areaA);
     limparBuffer();
 
-    printf("\n Informe o PIB da regioo A: \n");
+    printf("\n Informe o PIB da regioo A: exemplo: 674800000000.0;\n");
     scanf("%f", &PIBA);
     limparBuffer();
     
@@ -79,36 +77,50 @@ int main() {
     scanf("%f", &areaB);
     limparBuffer();
 
-    printf("\nInforme o PIB da regiao B: ");
+    printf("\nInforme o PIB da regiao B: exemplo: 300500000000.0");
     scanf("%f", &PIBB);
     limparBuffer();
     
     printf("\n Informe os pontos de turismo para regiao B : ");
     scanf("%i", &nuPointTuristicB);
     limparBuffer();
+
+
+    //processamento dos dados:
+    
+    float densidadePopuA, pibPercapiA, densidadePopuB, pibPercapiB;
+    densidadePopuA = populationA/areaA;
+    pibPercapiA = PIBA/populationA;
+    densidadePopuB = populationB/areaB;
+    pibPercapiB = PIBB/populationB;
+
     // Exibição dos Dados das Cartas:
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
-
+    printf("-------------------------------Carta-A--------------------------\n");
     printf("Informacoes Carta A:\n");
     printf("Estado A: %c \n", estadoA);
     printf("Codigo do estado A: %s \n", codCartaA);
     printf("Cidade A:%s \n ", nomeCidadeA);
-    printf("Populacao Cidade A: %i \n", populationA);
-    printf("Area Cidade A: %f \n", areaA);
-    printf("Produto interno bruto - PIB cidade A: %f \n",PIBA);
+    printf("Populacao Cidade A: %.2i \n", populationA);
+    printf("Area Cidade A: %.2f \n", areaA);
+    printf("Produto interno bruto - PIB cidade A: %.2f \n",PIBA);
     printf("Pontos turisticos Cidade A: %i \n", nuPointTuristicA);
+    printf("Densidade Populacional Carta A: %.2f \n", densidadePopuA);
+    printf("Pib Percapita Carta A: %f \n", pibPercapiA);
 
-    printf("\n -------------------------------------------------------------\n");
+    printf("\n ----------------------------Carta-B--------------------------\n");
 
     printf("Informacoes Carta B:\n");
     printf("Estado B: %c \n", estadoB);
     printf("Codigo do estado B: %s \n", codCartaB);
     printf("Cidade B:%s \n ", nomeCidadeB);
-    printf("Populacao Cidade B: %i \n", populationB);
-    printf("Area Cidade B: %f \n", areaB) ;
-    printf("Produto interno bruto - PIB cidade B: %f \n",PIBB);
+    printf("Populacao Cidade B: %.2i \n", populationB);
+    printf("Area Cidade B: %.2f \n", areaB) ;
+    printf("Produto interno bruto - PIB cidade B: %.2f \n",PIBB);
     printf("Pontos turisticos Cidade B: %i \n", nuPointTuristicB);
-    
+    printf("Densidade Populacional Carta B: %.2f \n", densidadePopuB);
+    printf("Pib Percapita Carta B: %f \n", pibPercapiB);
+    printf("--------------------------------------------------------------- ");
     return 0;
-}
+ };
