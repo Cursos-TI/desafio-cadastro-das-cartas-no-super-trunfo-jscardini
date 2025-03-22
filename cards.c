@@ -25,7 +25,7 @@ int main() {
     int populationB, nuPointTuristicB;
     float areaB, PIBB;
 
-    void limparBuffer() {
+    void limparBuffer(); {
         int c;
         while ((c = getchar()) != '\n' && c != EOF);
     }
@@ -94,6 +94,8 @@ int main() {
     densidadePopuB = populationB/areaB;
     pibPercapiB = PIBB/populationB;
 
+    // comparação des cartas
+
     // Exibição dos Dados das Cartas:
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
@@ -122,5 +124,7 @@ int main() {
     printf("Densidade Populacional Carta B: %.2f \n", densidadePopuB);
     printf("Pib Percapita Carta B: %f \n", pibPercapiB);
     printf("--------------------------------------------------------------- ");
+    
+    printf("___________________________Vencedor____________________________\n");
     return 0;
  };
